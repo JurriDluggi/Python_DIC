@@ -5,6 +5,7 @@ Functions can be use to filter and correlate images first before analysing resul
 
 ### Acknowledgment:  
 * Code Author: Charlie Bourigault
+* Modification to PyQT5: Jiří Dluhoš
 * Involved People: Melanie Senn, Chris Eberl
 * Collaborators for strain measurements and reviewers: Felix Schiebel, Tobias Kennerknecht, Marco Sebastiani, Jiří Dluhoš
 * Partial funding was provided by the European iStress project (http://www.stm.uniroma3.it/iSTRESS/Pages/iSTRESS%20Home%20page.aspx)

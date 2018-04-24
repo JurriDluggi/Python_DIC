@@ -11,8 +11,8 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the opened data and initiate variables content along with strain and marker neighbors calculation
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 import numpy as np, scipy, time, os
 from functions import DIC_Global, getData
 from interface import progressWidget, dockWidget

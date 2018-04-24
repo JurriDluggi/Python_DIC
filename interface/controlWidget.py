@@ -10,9 +10,10 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 
 Current File: This file manages the control tools in the analysis results
 """
+from PyQt5.QtWidgets import QApplication, QFrame,QDial,QSlider,QDockWidget,QMainWindow,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator, QImage, QPixmap, QIcon 
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
 import os, numpy as np
 from functions import masks
 

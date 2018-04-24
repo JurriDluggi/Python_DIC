@@ -11,8 +11,10 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the complete grid creation tool with controls, filters and shift correction
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtWidgets import QApplication, QDockWidget,QMainWindow,QToolButton,QSlider,QFrame,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout,QStackedLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator, QImage, QPixmap, QIcon 
+
 import os, time, matplotlib as mpl, numpy as np, cv2
 from functions import DIC_Global, filterFunctions, newProcessCorrelations, getData
 from interface import filterWidget, progressWidget, StrainAnalysis
@@ -322,8 +324,8 @@ class generateGridWidget(QWidget):
         else:
             #Test if files exists and extract data
 
-            gridX_entities = getData.getDataFromFile([gridDirectory+'/gridx.dat'], 0, singleColumn=1)
-            gridY_entities = getData.getDataFromFile([gridDirectory+'/gridy.dat'], 0, singleColumn=1)
+            gridX_entities = getData.getDataFromFile([gridDirectory+'/gridx.csv'], 0, singleColumn=1)
+            gridY_entities = getData.getDataFromFile([gridDirectory+'/gridy.csv'], 0, singleColumn=1)
 
             if gridX_entities is None or gridY_entities is None:
                 errorMessage = QMessageBox()

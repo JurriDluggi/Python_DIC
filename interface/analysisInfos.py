@@ -11,8 +11,10 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the analysis info dialog
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtWidgets import QApplication, QDockWidget,QMainWindow,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator, QImage, QPixmap, QIcon 
+
 import numpy as np, matplotlib as mpl, time
 from functions import plot2D, plot3D, getData, masks, DIC_Global
 

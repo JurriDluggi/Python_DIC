@@ -12,8 +12,10 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file runs the Main Analysis widget, parent of the whole visualization tool
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtWidgets import QApplication, QDockWidget,QMainWindow,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator, QImage, QPixmap, QIcon 
+
 from interface import menubar, initApp, progressWidget, controlWidget
 from functions import DIC_Global, getData, initData, masks
 #from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas

@@ -12,10 +12,15 @@ Current File: Contains mains classes and functions
 """
 
 import time, multiprocessing, numpy as np, matplotlib as mpl
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
-from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
+from PyQt5.QtWidgets import QApplication, QDockWidget,QActionGroup,QMainWindow,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator, QImage, QPixmap, QIcon 
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+import matplotlib.backends.qt_editor.formlayout as formlayout
+from matplotlib.backends.qt_compat import QtGui
+
 from mpl_toolkits.mplot3d import Axes3D
 mpl.rcParams.update({'figure.autolayout': True})
 from interface import dockWidget
@@ -24,7 +29,7 @@ class matplotlibWidget(FigureCanvas):
 
     def __init__(self, graphType=None, parent=None, toolbar=None):
 
-        super(matplotlibWidget,self).__init__(mpl.figure.Figure())
+        super(matplotlibWidget,self).__init__(figure=mpl.figure.Figure())
         self.figure = mpl.figure.Figure()
         self.figure.set_facecolor('none')
         self.canvas = FigureCanvas(self.figure)

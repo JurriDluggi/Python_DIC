@@ -10,9 +10,10 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 
 Current File: This file manages the open and create new analysis functions
 """
+from PyQt5.QtWidgets import QApplication, QDockWidget,QListView,QMainWindow,QFileDialog,QProgressDialog ,QDialog,QTabWidget,QAction, QVBoxLayout,QGridLayout, QSpinBox, QDoubleSpinBox, QWidget, QLabel, QLineEdit, QPushButton, QStatusBar, QMessageBox, QHBoxLayout, QGroupBox, QTableWidget, QTableWidgetItem, QAbstractItemView, QComboBox, QStyledItemDelegate, QCompleter, QCheckBox, QProgressBar,QSizePolicy, QMenuBar, QToolBar
+from PyQt5.QtCore import Qt, QSize, QLocale, QThread, QObject, pyqtSignal, pyqtSlot, QRegExp,QMetaObject, Q_ARG, QCoreApplication, QTimer, QTime, QFileInfo
+from PyQt5.QtGui import QValidator, QDoubleValidator, QIntValidator,QStandardItemModel,QRegExpValidator,QStandardItem, QImage, QPixmap, QIcon 
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
 import os, numpy as np, cv2
 from functions import DIC_Global
 from interface import menubar, generateGrid, dockWidget, StrainAnalysis
@@ -37,12 +38,12 @@ def openPrevious(self): #when opening a previous analysis, ask for the project f
 
 def startNewAnalysis(self): #called when a new analysis is started
 
-    filePathTest = QFileDialog.getOpenFileName(self, 'Select first image', '', 'Image Files (*.tif *.tiff *.bmp *.jpg *.jpeg *.png)')
+    filePathTest,mask = QFileDialog.getOpenFileName(self, 'Select first image', '', 'Image Files (*.tif *.tiff *.bmp *.jpg *.jpeg *.png)')
 
     if filePathTest == '':
         return
     else: #create the file list when an image is selected
-
+        print(os.path.basename(filePathTest))
         extension = os.path.splitext(os.path.basename(filePathTest))[1]
         fileList = os.listdir(os.path.dirname(filePathTest))
         fileList = [nb for nb in fileList if nb.endswith(extension)]
