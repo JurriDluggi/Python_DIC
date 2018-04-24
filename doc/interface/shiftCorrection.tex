@@ -1,0 +1,16 @@
+\newline
+\indent\indent The shift correction have been introduced in the Python DIC application to face problems such as camera lateral moves. In order to reduce the amount of pixel displacements due to the camera moves, a first general image correlation is performed without markers in order to align images. Once the alignment is performed, a normal marker correlation can be performed.\\
+\newline
+\indent The use of the shift correction may affect the accuracy of your results. It may lead to wrong marker displacement calculation and is therefore non recommended, although it can be used in extrem cases.\\
+\newline
+The shift correction is performed prior to the correlation process. The procedure to use is the following:
+\begin{itemize}
+  \item Check the shift correction option
+  \item Select a relatively large area (if possible outside of the grid location) by clicking and draging your mouse on the image
+  \item Click on the \textit{Track} button and wait until the end of the process
+  \item Click on the \textit{Confirm} button to validate
+\end{itemize}
+\newline
+\indent\indent At the end of the process, the shift correction values are available for each image. Use the input text box displaying the image number to navigate in the image and review the shift correction value. You can modify these values in case of wrong recognition by clicking on the \textit{*} button next to the shift values.\\
+\newline
+\indent Uncheck the shift correction tool to cancel the procedure or to change the tracking area. Shift corrections values will be taken in account once the grid is created and the correlation process started.

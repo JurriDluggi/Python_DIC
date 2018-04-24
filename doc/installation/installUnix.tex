@@ -1,0 +1,33 @@
+\subsubsection{Download and Install Miniconda3}
+\label{subs:Download and Install Miniconda3}
+  \indent\indent In order to run Python on your computer, a Python environment needs to be installed. Using a package manager as Miniconda (a light version of Anaconda) simplify the process and provides a good management tool for external libraries.\\
+  \newline
+  \indent Visit \textit{\href{http://conda.pydata.org/miniconda.html}} and download the last Miniconda \underline{3} (Python 3.x 64 bits) package for your system. Follow then the installation instructions.
+\subsubsection{Install Required Libraries}
+\label{subs:Install Required Libraries}
+  \indent\indent Several libraries are compulsory for the Python DIC software to run properly. The installation process using the Miniconda environment is simplified and convenient. Here is how it works.
+  \begin{itemize}
+    \item Open a Terminal window
+    \item Type in : \textit{conda install matplotlib}
+    \item Follow the instruction to install the package
+    \item Do the same with the \textit{scipy} library
+  \end{itemize}
+  \newline
+  \indent\indent OpenCV3 is a library which also needs to be installed. The release available on the default conda channel is not compatible with the latest Python3.x version when I'm writing these lines. However, the correct version of OpenCV have been compiled by different people and is available on different channels.\\
+  \newline
+  \indent The OpenCV3 compiled version for Unix systems is available on the \textit{menpo} channel. Here is how to install it.
+  \begin{itemize}
+    \item Terminal Command : \textit{conda install -c menpo opencv3}
+  \end{itemize}
+  \newline
+  \indent\indent In case the package is not available on this channel, use \textit{anaconda search opencv3} to find another place to download it from. (You may need the anaconda client to search for libraries. To install it, use \textit{conda install anaconda-client}).\\
+  \newline
+  \indent Libraries have been installed. The software is ready to be started.
+\subsubsection{Start Python DIC}
+\label{subs:Start Python DIC}
+  \indent\indent Once the Python DIC files have been download from the GitHub repository (and extracted if needed). Follow these simple steps.
+  \begin{itemize}
+    \item Open a Terminal window
+    \item Navigate to the folder containing the Python DIC \textit{.py} files (use the \textit{cd} command)
+    \item Type in : \textit{python DIC.py}
+  \end{itemize}

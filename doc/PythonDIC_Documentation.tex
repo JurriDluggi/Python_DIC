@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+\title{Python DIC Documentation}
+\author{Charlie Bourigault\\ bourigault.charlie@gmail.com}
+\date{June 2017}
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+\newpage
+\tableofcontents
+
+
+\newpage
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\label{sec:Introduction}
+\vspace{.5cm}
+\input{introduction}
+
+%%%%%%
+\newpage
+\section{Installation Instructions}
+\label{sec:Installation Instructions}
+\vspace{.5cm}
+\input{installation/installIntro}
+
+\subsection{Windows Systems}
+\label{sub:Windows Systems}
+  \input{installation/installWindow}
+
+\subsection{Unix Systems}
+\label{sub:Unix Systems}
+  \input{installation/installUnix}
+
+%%%%%%
+\newpage
+\section{Interface}
+\label{sec:Interface}
+\vspace{.5cm}
+  \input{interface/interfaceIntro}
+
+  \subsection{New Analysis}
+  \label{sub:New Analysis}
+    \input{interface/newAnalysis}
+
+    \subsubsection{Grid tools and information}
+    \label{subs:Grid Tools and Information}
+      \input{interface/gridTools}
+
+    \newpage
+    \subsubsection{Shift correction, filters and file importation}
+    \label{subs:Shift Correction and Filters}
+
+    \vspace{.3cm}
+      \paragraph{Shift Correction\\\newline}
+      \label{par:Shift Correction}
+        \input{interface/shiftCorrection}
+
+      \paragraph{Images Filters\\\newline}
+      \label{par:Images Filters}
+        \input{interface/imageFilters.tex}
+
+      \paragraph{Grid and Filters Importation\\\newline}
+      \label{par:Grid and Filters Importation}
+        \input{interface/gridFilterImport}
+
+  \newpage
+  \subsection{Data Analysis - Visualisation}
+  \label{sub:Data Analysis - Visualisation}
+  \vspace{.3cm}
+    \input{interface/visualisation}
+
+\newpage
+\section{Cleaning Procedures and Options}
+\label{sec:Cleaning Procedures and Options}
+\vspace{.5cm}
+
+  \subsection{Grid Management}
+  \label{sub:Grid Management}
+    \vspace{.2cm}
+    \input{cleaning/gridManagement}
+
+  \newpage
+  \subsection{Mask Images}
+  \label{sub:Mask Images}
+    \vspace{.2cm}
+    \input{cleaning/maskImages}
+
+  \newpage
+  \subsection{Mask Markers}
+  \label{sub:Mask Markers}
+    \vspace{.2cm}
+    \input{cleaning/maskMarkers}
+
+  \newpage
+  \subsection{Displacement versus position}
+  \label{sub:Displacement versus position}
+    \vspace{.2cm}
+    \input{cleaning/dispVsPos}
+
+  \newpage
+  \subsection{Relative neighbors displacement}
+  \label{subs:Relative neighbors displacement}
+    \vspace{.2cm}
+    \input{cleaning/relativNeighbors}
+
+\newpage
+\section{Further information}
+\label{sec:Further information}
+\vspace{.5cm}
+
+  \subsection{Profiles}
+  \label{sub:Profiles}
+    \vspace{.2cm}
+    \input{further/profile}
+
+  \newpage
+  \subsection{Analysis Information}
+  \label{sub:Analysis Information}
+    \vspace{.2cm}
+    \input{further/analysisInfo}
+
+  \subsection{File structure}
+  \label{sub:File structure}
+    \vspace{.2cm}
+    \input{further/fileStruct}
+
+\end{document}

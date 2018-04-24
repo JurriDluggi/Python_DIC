@@ -1,0 +1,19 @@
+\indent\indent The main information on each correlation process is stored in CSV format. For each analysis, the following files will be created:
+\begin{itemize}
+  \item \textit{filenamelist.csv} : This file contains names of your images files
+  \item \textit{gridx.csv} - \textit{gridy.csv} : These files store respectively the x and y coordinates of each marker in your grids along with their instance number.
+  \item \textit{validx.csv} - \textit{validy.csv} : These files store respectively the x and y coordinates of each marker of your analysis. Each line corresponds to a marker, each column corresponds to an image.
+  \item \textit{dispx.csv} - \textit{dispy.csv} : These files store respectively the x and y displacements in pixel of each marker of your analysis. Each line corresponds to a marker, each column corresponds to an image.
+  \item \textit{stdx.csv} - \textit{stdy.csv} : These files store respectively the x and y standard deviation in pixel of each marker of your analysis. Each line corresponds to a marker, each column corresponds to an image.
+  \item \textit{corrcoef.csv} : This file stores the correlation coefficient or each marker of your analysis. Each line correspond to a marker, each column corresponds to an image.
+  \item \textit{neighbors.csv} : This file stores the closest neighbors of each marker. Each line correspond to a marker. This file is updated when neighbors are re-calculated.
+  \item \textit{infoMarkers.csv} and \textit{infoAnalysis.csv} : These files store informations on your analysis such as correlation errors and parameters used.
+  \item \textit{strainx.csv} and \textit{strainy.csv} : These files store the global strain values of each grid along images. Each line corresponds to the image, each column correspond to a grid. These two files are automatically updated when coordinates are re-calculated.
+  \item \textit{filter.csv} (Optional) : This file stores information relative to filters applied.
+  \item \textit{largeDisp.csv} (Optional) : This file stores the calculated large displacement on your analysis in case the shift correction have been used.
+\end{itemize}
+
+\paragraph{Masks\\\newline}
+\label{par:Masks}
+\newline
+\indent Masks (or versions) are saved in the \textit{log} folder of each analysis. This folder is automatically created when the first mask is applied. A mask is then saved whenever markers or images are hide on the analysis. You can always load an old version of your analysis by importing one of these masks.
