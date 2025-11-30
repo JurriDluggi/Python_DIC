@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the complete grid creation tool with controls, filters and shift correction
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import os, time, matplotlib as mpl, numpy as np, cv2
 from functions import DIC_Global, filterFunctions, newProcessCorrelations, getData
 from interface import filterWidget, progressWidget, StrainAnalysis
@@ -329,7 +330,7 @@ class generateGridWidget(QWidget):
                 errorMessage = QMessageBox()
                 errorMessage.setWindowTitle('Error')
                 errorMessage.setText('Grid not found.')
-                errorMessage.exec_()
+                errorMessage.exec()
                 return
 
             gridX = []
@@ -381,7 +382,7 @@ class generateGridWidget(QWidget):
                 errorMessage = QMessageBox()
                 errorMessage.setWindowTitle('Error')
                 errorMessage.setText('filter.dat not found.')
-                errorMessage.exec_()
+                errorMessage.exec()
                 return
 
             self.filterToolWidget.refreshAppliedFilters()

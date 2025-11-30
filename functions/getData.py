@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the analysis files and open/generate data from them
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import csv, os, numpy as np, time, multiprocessing, pandas
 from math import sqrt
 from functions import DIC_Global, filterFunctions, initData

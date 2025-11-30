@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the grid instances dialog
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np
 from interface import progressWidget
 from functions import masks, DIC_Global
@@ -190,4 +191,4 @@ def launchMaskGridDialog(self):
     self.maskInstances = maskGridInstanceDialog(self.analysisWidget)
     self.maskInstances.initiateInstances(self.analysisWidget.activeInstances, self.analysisWidget.grid_instances, self.analysisWidget.data_x[:, referenceImage], self.analysisWidget.data_y[:, referenceImage])
 
-    self.maskInstances.exec_()
+    self.maskInstances.exec()

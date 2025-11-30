@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the movable and closable dockWidgets displaying 2D and 3D plots
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, cv2
 from functions import DIC_Global, filterFunctions, plot2D, plot3D
 
@@ -302,7 +303,7 @@ class dockParameters(QDialog):
                 errorMessage = QMessageBox()
                 errorMessage.setWindowTitle('Error')
                 errorMessage.setText('Wrong colorbar limit. ('+str(lowLimit)+')')
-                errorMessage.exec_()
+                errorMessage.exec()
                 return
             num_ticks = 11
             labels = np.linspace(lowLimit, 1, num_ticks)

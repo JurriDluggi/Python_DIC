@@ -12,8 +12,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the whole masks saving and opening features
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import time, os, numpy as np
 from functions import DIC_Global, initData, plot2D, plot3D, getData
 from interface import progressWidget, dockWidget
@@ -22,7 +23,7 @@ def generateMask(mask, path, fileName=None, confirmDialog=True):
 
     if confirmDialog is True:
         confirmCalc = confirmMask()
-        result = confirmCalc.exec_()
+        result = confirmCalc.exec()
     else:
         result = 1
 

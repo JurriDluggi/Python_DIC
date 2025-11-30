@@ -12,10 +12,11 @@ Current File: Contains mains classes and functions
 """
 
 import time, multiprocessing, numpy as np, matplotlib as mpl
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
-from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 from mpl_toolkits.mplot3d import Axes3D
 mpl.rcParams.update({'figure.autolayout': True})
 from interface import dockWidget
@@ -74,7 +75,7 @@ class matplotlibToolbar(NavigationToolbar):
 
         graphDisplay = self.parent.parentWidget.graphDisplay
         parametersDialog = dockWidget.dockParameters(self.parent, graphDisplay)
-        parametersDialog.exec_()
+        parametersDialog.exec()
 
 def createThread(parent, args, function, signal=None): #a signal will be created as long as signal is different from None, callable with thread.signal.threadSignal.emit([]) : [] can contains data to be emitted
 
@@ -148,4 +149,4 @@ class Thread(QThread):
 
 class threadSignal(QObject):
 
-    threadSignal = pyqtSignal(list) #each signal can emit lists
+    threadSignal = Signal(list) #each signal can emit lists

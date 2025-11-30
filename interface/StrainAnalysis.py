@@ -12,11 +12,12 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file runs the Main Analysis widget, parent of the whole visualization tool
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 from interface import menubar, initApp, progressWidget, controlWidget
 from functions import DIC_Global, getData, initData, masks
-#from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
+#from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 #from matplotlib.figure import Figure
 #import matplotlib.pyplot as plt
 #import matplotlib.mlab as ml

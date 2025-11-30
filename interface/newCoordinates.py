@@ -10,8 +10,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: Allows the user to re-calculate the current 2D mapped coordinates
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np
 from interface import progressWidget
 from functions import initData, masks, DIC_Global
@@ -67,4 +68,4 @@ class newCoordinatesDialog(QDialog):
 def launchCoordinatesDialog(self):
 
     self.calcCoordinates = newCoordinatesDialog(self.analysisWidget)
-    self.calcCoordinates.exec_()
+    self.calcCoordinates.exec()

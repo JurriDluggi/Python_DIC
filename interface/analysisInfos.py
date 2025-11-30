@@ -11,15 +11,16 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the analysis info dialog
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, matplotlib as mpl, time
 from functions import plot2D, plot3D, getData, masks, DIC_Global
 
 def launchDialog(parent):
 
     analysisDialog = analysisInfos(parent)
-    analysisDialog.exec_()
+    analysisDialog.exec()
 
 class analysisInfos(QDialog):
 

@@ -17,3 +17,27 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 http://www.apache.org/licenses/LICENSE-2.0  
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+## Dependencies and Installation
+
+This project has been updated to use PySide6 for the Qt bindings (previously PyQt4). Install the runtime dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+If you prefer a single package, install PySide6 directly:
+
+```bash
+pip install PySide6
+```
+
+Migration notes:
+
+- Qt binding: Project was migrated from PyQt4 to PySide6. Import statements now use `from PySide6.QtWidgets import *`, `from PySide6.QtCore import *`, and `from PySide6.QtGui import *`.
+- Dialog execution: `exec_()` calls have been replaced with `exec()` for PySide6.
+- Signals: `pyqtSignal` usage has been updated to `Signal` from `PySide6.QtCore`.
+- Regular expressions: `QRegExp`/`QRegExpValidator` were replaced by `QRegularExpression`/`QRegularExpressionValidator` for Qt6 compatibility.
+- Matplotlib backend: Qt backend imports have been updated from `backend_qt4agg` to `backend_qtagg`.
+
+If something in the UI behaves differently after the migration, check for differences in API signatures such as `QFileDialog` return values or other Qt6 changes.

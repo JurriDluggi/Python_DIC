@@ -11,7 +11,8 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the menubar and create menus and actions
 """
 
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtGui import *
 from functions import startOptions, masks
 from interface import profile, dispVsPos, relativeNeighborsDialog, deleteImages, maskInstances, analysisInfos, maskMarkers, newNeighbors, newCoordinates
 

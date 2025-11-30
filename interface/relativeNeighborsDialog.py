@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the relative neighbors mask procedure dialog
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, cv2, os, csv, scipy.optimize, copy, time, matplotlib.pyplot as plt, matplotlib.path as mpath
 from functions import getData, masks, DIC_Global
 from interface import progressWidget
@@ -436,7 +437,7 @@ def launchRNDialog(self):
     self.analysisWidget.parentWindow.devWindow.addInfo('Cleaning Procedure Request : Relative Neighbors')
     self.relativeN = RelativeNDialog(self.analysisWidget)
     self.relativeN.startCalculation(startUp = 1)
-    self.relativeN.exec_()
+    self.relativeN.exec()
 
 def newCalculation(disp_x, disp_y, activeImages, activeMarkers, activeInstances, gridInstances, neighbors, iterations, nodeOnImage, topLimitV, bottomLimitV, relativeX, relativeY, thread):
 

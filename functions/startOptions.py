@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the open and create new analysis functions
 """
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import os, numpy as np, cv2
 from functions import DIC_Global
 from interface import menubar, generateGrid, dockWidget, StrainAnalysis
@@ -54,7 +55,7 @@ def startNewAnalysis(self): #called when a new analysis is started
             count+=1
 
         newAnalysis = nameAnalysis(self, fileNameList, os.path.dirname(filePathTest))
-        result = newAnalysis.exec_()
+        result = newAnalysis.exec()
 
         if result == 1:
             menubar.menuDisabled(self)
@@ -136,8 +137,8 @@ class nameAnalysis(QDialog):
         self.analysisInput.setFont(currentFont)
         self.analysisInput.setMinimumWidth(200)
         self.analysisInput.setMinimumHeight(40)
-        validatorRx = QRegExp("\\w+")
-        validator = QRegExpValidator(validatorRx, self)
+        validatorRx = QRegularExpression("\\w+")
+        validator = QRegularExpressionValidator(validatorRx, self)
         self.analysisInput.setValidator(validator)
         analysisName.addStretch(1)
         analysisName.addWidget(self.analysisLbl)

@@ -12,8 +12,9 @@ Current File: This file manages the main gui application on start-up and include
 """
 
 import sys, multiprocessing
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 from interface import initApp, devMode
 
 #PARAMETERS
@@ -34,4 +35,4 @@ if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

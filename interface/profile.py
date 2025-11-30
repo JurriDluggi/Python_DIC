@@ -10,8 +10,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 
 Current File: This file manages the profile dialog and profile functions
 """
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, sys, os
 import DIC
 
@@ -33,7 +34,7 @@ def readProfile(filePath, default=None):
 def manageProfile(parent):
 
     startDialog = manageAllProfiles(parent)
-    startDialog.exec_()
+    startDialog.exec()
 
 def changeProfile(parent, user):
 
@@ -42,7 +43,7 @@ def changeProfile(parent, user):
     changeP.setText("You will have to restart the program to load the following profile : "+user)
     changeP.setInformativeText("Do you want to continue?")
     changeP.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-    ret = changeP.exec_()
+    ret = changeP.exec()
     if ret == QMessageBox.No:
         return
     else:
@@ -238,8 +239,8 @@ class manageAllProfiles(QDialog):
 
         text, ok = QInputDialog.getText(self, 'New Profile', 'Enter desired profile name:')
         #defining validator
-        validatorRx = QRegExp("\\w+")
-        validator = QRegExpValidator(validatorRx, self)
+        validatorRx = QRegularExpression("\\w+")
+        validator = QRegularExpressionValidator(validatorRx, self)
         #check user answer
         if ok and text != '':
             checkUsername = validator.validate(text, 0)
@@ -260,7 +261,7 @@ class manageAllProfiles(QDialog):
             else:
                 msgBox = QMessageBox()
                 msgBox.setText("Please use only alpha-numeric characters.")
-                msgBox.exec_()
+                msgBox.exec()
 
     def deleteProfile(self):
 
@@ -325,7 +326,7 @@ class manageAllProfiles(QDialog):
             infoBox.setWindowTitle("Info")
             infoBox.setText("New settings will be applied on next start-up.")
             infoBox.setInformativeText("Profiles have been saved.")
-            ret = infoBox.exec_()
+            ret = infoBox.exec()
 #            if ret:
 #                quit_program()
             self.close()
@@ -336,7 +337,7 @@ class manageAllProfiles(QDialog):
             errorMessage = QMessageBox()
             errorMessage.setWindowTitle('Warning')
             errorMessage.setText(error)
-            errorMessage.exec_()
+            errorMessage.exec()
         self.profileList.setCurrentIndex(self.currentIndex)
 
     def fullScreenBox_Changed(self):

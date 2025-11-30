@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: Defines the start-up process and load the interface
 """
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 from interface import menubar, profile
 from functions import startOptions
 

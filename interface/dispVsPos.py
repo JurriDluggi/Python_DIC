@@ -10,8 +10,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 
 Current File: This file manages the Disp. vs Pos. mask procedure
 """
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, copy, matplotlib.patches as mpp
 from functions import masks, DIC_Global
 from interface import progressWidget
@@ -313,4 +314,4 @@ def launchDVPDialog(self, currentImage): #initiate the variables and launch the 
 
 
     self.DVP = dispVsPosDialog(self.analysisWidget, currentImage)
-    self.DVP.exec_()
+    self.DVP.exec()

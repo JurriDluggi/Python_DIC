@@ -10,8 +10,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 
 Current File: This file manages the progress bars functions
 """
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import time, random
 
 REFRESH_TIME = 0.1

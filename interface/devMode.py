@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: This file manages the developer mode - NOT TESTED COMPLETELY
 """
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtGui import *
+from PySide6.QtCore import *
 
 class DevMode(QDockWidget): #dockWidget used in DevMode to display more informations to the developer
 

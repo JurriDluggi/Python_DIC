@@ -11,8 +11,9 @@ More details regarding the project on the GitHub Wiki : https://github.com/Chris
 Current File: Allows the user to re-calculate the current grid neighbors
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import numpy as np, time
 from interface import progressWidget
 from functions import initData
@@ -82,4 +83,4 @@ class newNeighborsDialog(QDialog):
 def launchNeighborsDialog(self):
 
     self.calcNeighbors = newNeighborsDialog(self.analysisWidget)
-    self.calcNeighbors.exec_()
+    self.calcNeighbors.exec()
